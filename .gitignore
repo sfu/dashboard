@@ -1,1 +1,4 @@
 *DS_STORE
+history.yml
+config/*.yml
+Gemfile.lock
