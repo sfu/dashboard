@@ -11,7 +11,7 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
 // Widget-number styles
 // ----------------------------------------------------------------------------
 .widget-number {
-
+  padding: 0 !important;
   background-color: $background-color;
 
   .title {
