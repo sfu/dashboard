@@ -20,6 +20,19 @@ configure do
   end
 end
 
+module Rufus::Scheduler
+  class Job
+    old_trigger = self.instance_method(:trigger)
+
+    define_method(:trigger) do
+      unless Sinatra::Application.connections.empty?
+        old_trigger.bind(self).call
+      end
+    end
+  end
+end
+
+
 map Sinatra::Application.assets_prefix do
   run Sinatra::Application.sprockets
 end
