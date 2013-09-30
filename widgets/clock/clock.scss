@@ -7,7 +7,14 @@ $background-color:  #dc5945;
 // Widget-clock styles
 // ----------------------------------------------------------------------------
 .widget-clock {
+  padding: 0 !important;
 
-  background-color: $background-color;
+  h1 {
+    font-weight: lighter;
+  }
 
+  h2 {
+    font-weight: lighter;
+    letter-spacing: normal;
+  }
 }
