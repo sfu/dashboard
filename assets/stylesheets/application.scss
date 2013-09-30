@@ -18,6 +18,8 @@ $background-danger-color-1: #e82711;
 $background-danger-color-2: #9b2d23;
 $text-danger-color: #fff;
 
+$widget-border-radius: 5px;
+
 @-webkit-keyframes status-warning-background {
   0%   { background-color: $background-warning-color-1; }
   50%  { background-color: $background-warning-color-2; }
@@ -148,6 +150,9 @@ h3 {
   width: 100%;
   display: table-cell;
   vertical-align: middle;
+  border-radius: $widget-border-radius;
+}
+
 .widget.status-safe {
   background-color: $background-safe-color;
 }
