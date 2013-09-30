@@ -9,24 +9,86 @@ $(function() {
 <% content_for :title do %>Canvas Status Dashboard<% end %>
 <div class="gridster">
   <ul>
-    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
-      <div data-id="welcome" data-view="Text" data-title="Hello" data-text="This is your shiny new dashboard." data-moreinfo="Protip: You can drag the widgets around!"></div>
+
+    <!-- Logo -->
+    <li data-row="1" data-col="3" data-sizex="1" data-sizey="1">
+      <div data-view="Image" data-image="/canvas_logo.png"></div>
     </li>
 
-     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="synergy" data-view="Meter" data-title="Synergy" data-min="0" data-max="100"></div>
+    <!-- Clock -->
+    <li data-row="2" data-col="3" data-sizex="1" data-sizey="1">
+      <div data-view="Clock"></div>
     </li>
 
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="2">
-      <div data-id="buzzwords" data-view="List" data-unordered="true" data-title="Buzzwords" data-moreinfo="# of times said around the office"></div>
+    <!-- Graphite Graphs -->
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="2">
+      <div data-width="748" data-height="340" data-view="Graphite" data-image="http://stats.its.sfu.ca/render/?_salt=1380058660.706&title=Apache%20%26%20Rails%20Hits%2FHour&bgcolor=222222&fgcolor=FFFFFF&hideGrid=false&graphOnly=false&lineWidth=2&areaMode=all&target=alias(hitcount(scale(sumSeries(*.timers.canvas.production.canvas-ap*.rails.responseTime.count)%2C0.1)%2C%221h%22)%2C%20%22Rails%22)&target=alias(hitcount(sumSeries(stats.canvas.production.canvas-ap*.apache.response.*)%2C%221h%22)%2C%22Apache%22)"></div>
+    </li>
+    <li data-row="1" data-col="4" data-sizex="2" data-sizey="2">
+      <div data-width="748" data-height="340" data-view="Graphite" data-image="http://stats.its.sfu.ca/render/?target=alias(stats.timers.canvas.production.canvas-ap1.rails.responseTime.mean%2C%20'AP1')&target=alias(stats.timers.canvas.production.canvas-ap2.rails.responseTime.mean%2C%20'AP2')&target=alias(stats.timers.canvas.production.canvas-ap3.rails.responseTime.mean%2C%20'AP3')&target=alias(stats.timers.canvas.production.canvas-ap4.rails.responseTime.mean%2C%20'AP4')&target=alias(stats.timers.canvas.production.canvas-ap5.rails.responseTime.mean%2C%20'AP5')&target=alias(stats.timers.canvas.production.canvas-ap6.rails.responseTime.mean%2C%20'AP6')&target=alias(stats.timers.canvas.production.canvas-ap7.rails.responseTime.mean%2C%20'AP7')&target=alias(stats.timers.canvas.production.canvas-ap8.rails.responseTime.mean%2C%20'AP8')&target=alias(stats.timers.canvas.production.canvas-ap9.rails.responseTime.mean%2C%20'AP9')&target=alias(stats.timers.canvas.production.canvas-ap10.rails.responseTime.mean%2C%20'AP10')&&hideLegend=false&bgcolor=222222&fgcolor=FFFFFF&title=Rails%20Mean%20Response%20Time%20(ms)&yAxisSide=right"></div>
     </li>
 
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="valuation" data-view="Number" data-title="Current Valuation" data-moreinfo="In billions" data-prefix="$"></div>
+    <!-- Bamboo Deploys -->
+    <li data-row="3" data-col="3" data-sizex="1" data-sizey="1">
+        <div data-id="bamboo_list" data-view="BambooList"></div>
     </li>
 
-    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
-      <div data-id="convergence" data-view="Graph" data-title="Convergence" style="background-color:#ff9618"></div>
+    <!-- Google Anaylitcs -->
+    <li data-row="3" data-col="1" data-sizex="1" data-sizey="2">
+        <div data-id="active_users" data-view="GAUserCount" data-title="Active Users"></div>
     </li>
+
+    <!-- Enrollments -->
+    <li data-row="3" data-col="5" data-sizex="1" data-sizey="2">
+        <div data-id="enrollments" data-view="List" data-unordered="true" data-title="Enrollments" data-moreinfo="(current term)"></div>
+    </li>
+
+    <!-- Github PRs -->
+    <li data-row="3" data-col="2" data-sizex="1" data-sizey="1">
+        <div data-id="github_pull_requests" data-view="GithubNumber" data-title="Open Pull Requests" data-moreinfo="on branch sfu-develop"></div>
+    </li>
+
+    <!-- Github Commits Behind -->
+    <li data-row="3" data-col="4" data-sizex="1" data-sizey="1">
+        <div data-id="github_branch_comparison" data-view="GithubNumber" data-title="Commits Not Deployed" data-moreinfo="Comparing sfu-deploy&hellip;sfu-develop"></div>
+    </li>
+
+    <!-- Delayed Job Counts -->
+    <li data-row="4" data-col="3" data-sizex="1" data-sizey="1">
+      <div data-id="delayed_job_counts" data-view="DelayedJobCounts"></div>
+    </li>
+
+    <!-- App Node Statuses -->
+    <li data-row="5" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="node_status_ap1" data-view="NodeStatus"></div>
+    </li>
+    <li data-row="5" data-col="2" data-sizex="1" data-sizey="1">
+      <div data-id="node_status_ap2" data-view="NodeStatus"></div>
+    </li>
+    <li data-row="5" data-col="3" data-sizex="1" data-sizey="1">
+      <div data-id="node_status_ap3" data-view="NodeStatus"></div>
+    </li>
+    <li data-row="5" data-col="4" data-sizex="1" data-sizey="1">
+      <div data-id="node_status_ap4" data-view="NodeStatus"></div>
+    </li>
+    <li data-row="5" data-col="5" data-sizex="1" data-sizey="1">
+      <div data-id="node_status_ap5" data-view="NodeStatus"></div>
+    </li>
+    <li data-row="6" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="node_status_ap6" data-view="NodeStatus"></div>
+    </li>
+    <li data-row="6" data-col="2" data-sizex="1" data-sizey="1">
+      <div data-id="node_status_ap7" data-view="NodeStatus"></div>
+    </li>
+    <li data-row="6" data-col="3" data-sizex="1" data-sizey="1">
+      <div data-id="node_status_ap8" data-view="NodeStatus"></div>
+    </li>
+    <li data-row="6" data-col="4" data-sizex="1" data-sizey="1">
+      <div data-id="node_status_ap9" data-view="NodeStatus"></div>
+    </li>
+    <li data-row="6" data-col="5" data-sizex="1" data-sizey="1">
+      <div data-id="node_status_ap10" data-view="NodeStatus"></div>
+    </li>
+
   </ul>
 </div>
