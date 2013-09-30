@@ -1,8 +1,16 @@
 require 'dashing'
+require 'yaml'
 
 configure do
   set :auth_token, 'YOUR_AUTH_TOKEN'
   set :default_dasbhoard, 'canvas'
+
+  Dir.glob('config/*.yml').each do |f|
+    config_name = File.basename(f, '.*')
+    raw_config = File.read(f)
+    config = YAML.load(raw_config).symbolize_keys
+    set config_name.to_sym, Proc.new { config }
+  end
 
   helpers do
     def protected!
