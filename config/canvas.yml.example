@@ -1,0 +1,4 @@
+:url_base: https://canvas.sfu.ca
+:auth_token: Bearer xxxxxxxxxxxxx
+:enrollments:
+    :path: /sfu/stats/enrollments/current.json

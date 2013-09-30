@@ -1,0 +1,7 @@
+bamboo_host: bamboo.its.sfu.ca/bamboo
+bamboo_username: xxxxxx
+bamboo_password: xxxxxx
+plan_keys:
+    - CANVAS-CANVASPROD
+    - CANVAS-CANVASSTAGE
+    - CANVAS-CANVASTEST

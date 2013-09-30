@@ -1,0 +1,4 @@
+service_account_email: YOURIDNUMBER@developer.gserviceaccount.com
+key_file: KEYFILENAME.p12
+key_secret:  KEY_SECRET
+profile_id: ga:YOURPROFILEID
