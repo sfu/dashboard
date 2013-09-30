@@ -2,7 +2,6 @@ require 'dashing'
 require 'yaml'
 
 configure do
-  set :auth_token, 'YOUR_AUTH_TOKEN'
   set :default_dasbhoard, 'canvas'
 
   Dir.glob('config/*.yml').each do |f|
