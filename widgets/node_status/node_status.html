@@ -1,0 +1,13 @@
+<h1 class="title" data-bind="node_id"></h1>
+<ul>
+    <li>
+        <h3 data-bind="cpu_perc | append '%'"></h3>
+        <div>CPU Usage</div>
+    </li>
+    <li>
+        <h3 data-bind="passenger_queue"></h3>
+        <div>Passenger Queue</div>
+    </li>
+</ul>
+
+<p class="updated-at" data-bind="updatedAtMessageWithSeconds"></p>
