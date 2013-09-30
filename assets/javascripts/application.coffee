@@ -6,6 +6,14 @@
 #= require_tree ../../widgets
 
 
+Dashing.Widget::accessor 'updatedAtMessageWithSeconds', ->
+    if updatedAt = @get('updatedAt')
+      timestamp = new Date(updatedAt * 1000)
+      hours = timestamp.getHours()
+      minutes = ("0" + timestamp.getMinutes()).slice(-2)
+      seconds = ("0" + timestamp.getSeconds()).slice(-2)
+      "Last updated at #{hours}:#{minutes}:#{seconds}"
+
 Dashing.on 'ready', ->
   Dashing.widget_margins ||= [5, 5]
   Dashing.widget_base_dimensions ||= [300, 360]
