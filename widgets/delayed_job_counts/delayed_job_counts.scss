@@ -1,4 +1,4 @@
-.widget-delayed-job_counts {
+.widget-delayed-job-counts {
     background-color: #333333;
     padding: 16px 0 0 0 !important;
     vertical-align: top !important;
@@ -8,8 +8,8 @@
     }
 
     ul>li {
-        display: inline-block;
-        width: 33%;
+        display: inline-block !important;
+        width: 33% !important;
 
         &:nth-of-type(2) {
             border-left: 1px solid #444;
