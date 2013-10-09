@@ -19,6 +19,6 @@ end
 
 after "deploy", "deploy:cleanup"
 
-# after "deploy" do
-#   run "sudo restart dashboard"
-# end
+after "deploy" do
+  run "service dashboard restart"
+end
