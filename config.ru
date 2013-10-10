@@ -1,8 +1,10 @@
 require 'dashing'
 require 'yaml'
+require 'SecureRandom'
 
 configure do
   set :default_dasbhoard, 'canvas'
+  set :auth_token, ENV['AUTH_TOKEN'] || SecureRandom.uuid
 
   Dir.glob('config/*.yml').each do |f|
     config_name = File.basename(f, '.*')
