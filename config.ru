@@ -1,6 +1,6 @@
 require 'dashing'
 require 'yaml'
-require 'SecureRandom'
+require 'securerandom'
 
 configure do
   set :default_dasbhoard, 'canvas'
