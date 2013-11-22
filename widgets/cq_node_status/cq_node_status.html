@@ -1,0 +1,21 @@
+<h1 class="title" data-bind="label"></h1>
+<ul>
+    <li>
+        <h3 data-bind="load_average"></h3>
+        <div>Load Average</div>
+    </li>
+    <li>
+        <h3 data-bind="memory_usage | append '%'"></h3>
+        <div>Memory</div>
+    </li>
+    <li>
+        <h3 data-bind="html_average_response | append 'ms'"></h3>
+        <div>HTML Response</div>
+    </li>
+    <li data-showif="json_average_response">
+        <h3 data-bind="json_average_response | append 'ms'"></h3>
+        <div>JSON Response</div>
+    </li>
+</ul>
+
+<p class="updated-at" data-bind="updatedAtMessageWithSeconds"></p>
