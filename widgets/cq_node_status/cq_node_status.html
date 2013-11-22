@@ -16,6 +16,10 @@
         <h3 data-bind="json_average_response | append 'ms'"></h3>
         <div>JSON Response</div>
     </li>
+    <li data-showif="requests_per_minute">
+        <h3 data-bind="requests_per_minute | append ' req'"></h3>
+        <div>Per Minute</div>
+    </li>
 </ul>
 
 <p class="updated-at" data-bind="updatedAtMessageWithSeconds"></p>
