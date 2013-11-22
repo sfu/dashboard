@@ -1,0 +1,20 @@
+.widget-workflow-stats {
+    background-color: #333333;
+    padding: 16px 0 0 0 !important;
+    vertical-align: top !important;
+
+    ul {
+        padding-top: 6px;
+    }
+
+    ul>li {
+        display: inline-block !important;
+        width: 33% !important;
+
+        &:nth-of-type(2) {
+            border-left: 1px solid #444;
+            border-right: 1px solid #444;
+        }
+    }
+
+}

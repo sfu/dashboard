@@ -1,0 +1,8 @@
+<h1>Workflow Stats</h1>
+<ul>
+    <li data-foreach-item="items">
+        <h3 data-bind="item.value"></h3>
+        <div data-bind="item.status"></div>
+    </li>
+</ul>
+<p class="updated-at" data-bind="updatedAtMessageWithSeconds"></p>

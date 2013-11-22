@@ -22,6 +22,12 @@ SCHEDULER.every '30s' do
     data[:name].slice! 'Deploy to '
     data
   end
+  
+  # Canvas plans
   items = settings.bamboo[:plan_keys].map { |p| get_plan_status(p) }
   send_event('bamboo_list', { items: items })
+
+  # CQ plans
+  items = settings.bamboo[:cq_plan_keys].map { |p| get_plan_status(p) }
+  send_event('cq_bamboo_list', { items: items })
 end

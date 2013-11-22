@@ -100,3 +100,4 @@ DEPENDENCIES
   bamboo_api!
   dashing
   github_api
+  rest-client

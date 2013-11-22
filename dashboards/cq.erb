@@ -1,0 +1,41 @@
+<script type='text/javascript'>
+$(function() {
+  Dashing.widget_base_dimensions = [374, 170]
+  Dashing.numColumns = 5
+});
+</script>
+
+
+<% content_for :title do %>CQ Status Dashboard<% end %>
+<div class="gridster">
+  <ul>
+
+    <!-- Logo -->
+    <li data-row="1" data-col="3" data-sizex="1" data-sizey="1">
+      <div data-view="Image" data-image="/cq_logo.png"></div>
+    </li>
+
+    <!-- Clock -->
+    <li data-row="2" data-col="3" data-sizex="1" data-sizey="1">
+      <div data-view="Clock"></div>
+    </li>
+
+    <!-- Graphite Graphs -->
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="2">
+      <div data-width="748" data-height="340" data-view="Graphite" data-image="http://stats.its.sfu.ca/render/?width=748&height=340&_salt=1383157997.786&from=-15mins&fontName=Helvetica&fontSize=14&vtitle= &target=alias(movingAverage(sumSeries(stats_counts.cq.author-p2.response-codes.200%2Cstats_counts.cq.author-p2.response-codes.201%2Cstats_counts.cq.author-p2.response-codes.206%2Cstats_counts.cq.author-p2.response-codes.300%2Cstats_counts.cq.author-p2.response-codes.302%2Cstats_counts.cq.author-p2.response-codes.304%2Cstats_counts.cq.author-p2.response-codes.400%2Cstats_counts.cq.author-p2.response-codes.401%2Cstats_counts.cq.author-p2.response-codes.403%2Cstats_counts.cq.author-p2.response-codes.404%2Cstats_counts.cq.author-p2.response-codes.405%2Cstats_counts.cq.author-p2.response-codes.416%2Cstats_counts.cq.author-p2.response-codes.500)%2C5)%2C%22A2%22)&target=alias(movingAverage(sumSeries(stats_counts.cq.publisher-p1.response-codes.200%2Cstats_counts.cq.publisher-p1.response-codes.201%2Cstats_counts.cq.publisher-p1.response-codes.206%2Cstats_counts.cq.publisher-p1.response-codes.300%2Cstats_counts.cq.publisher-p1.response-codes.302%2Cstats_counts.cq.publisher-p1.response-codes.304%2Cstats_counts.cq.publisher-p1.response-codes.400%2Cstats_counts.cq.publisher-p1.response-codes.401%2Cstats_counts.cq.publisher-p1.response-codes.403%2Cstats_counts.cq.publisher-p1.response-codes.404%2Cstats_counts.cq.publisher-p1.response-codes.405%2Cstats_counts.cq.publisher-p1.response-codes.416%2Cstats_counts.cq.publisher-p1.response-codes.500)%2C5)%2C%22P1%22)&target=alias(movingAverage(sumSeries(stats_counts.cq.publisher-p2.response-codes.200%2Cstats_counts.cq.publisher-p2.response-codes.201%2Cstats_counts.cq.publisher-p2.response-codes.206%2Cstats_counts.cq.publisher-p2.response-codes.300%2Cstats_counts.cq.publisher-p2.response-codes.302%2Cstats_counts.cq.publisher-p2.response-codes.304%2Cstats_counts.cq.publisher-p2.response-codes.400%2Cstats_counts.cq.publisher-p2.response-codes.401%2Cstats_counts.cq.publisher-p2.response-codes.403%2Cstats_counts.cq.publisher-p2.response-codes.404%2Cstats_counts.cq.publisher-p2.response-codes.405%2Cstats_counts.cq.publisher-p2.response-codes.416%2Cstats_counts.cq.publisher-p2.response-codes.500)%2C5)%2C%22P2%22)&target=alias(movingAverage(sumSeries(stats_counts.cq.publisher-p3.response-codes.200%2Cstats_counts.cq.publisher-p3.response-codes.201%2Cstats_counts.cq.publisher-p3.response-codes.206%2Cstats_counts.cq.publisher-p3.response-codes.300%2Cstats_counts.cq.publisher-p3.response-codes.302%2Cstats_counts.cq.publisher-p3.response-codes.304%2Cstats_counts.cq.publisher-p3.response-codes.400%2Cstats_counts.cq.publisher-p3.response-codes.401%2Cstats_counts.cq.publisher-p3.response-codes.403%2Cstats_counts.cq.publisher-p3.response-codes.404%2Cstats_counts.cq.publisher-p3.response-codes.405%2Cstats_counts.cq.publisher-p3.response-codes.416%2Cstats_counts.cq.publisher-p3.response-codes.500)%2C5)%2C%22P3%22)&title=Number%20of%20Requests&areaMode=stacked&lineWidth=3&hideLegend=false&bgcolor=222222&fgcolor=FFFFFF"></div>
+    </li>
+    <li data-row="1" data-col="4" data-sizex="2" data-sizey="2">
+      <div data-width="748" data-height="340" data-view="Graphite" data-image="http://stats.its.sfu.ca/render/?width=748&height=340&_salt=1383064099.075&from=-15mins&fontName=Helvetica&fontSize=14&target=alias(movingAverage(stats.timers.cq.author-p2.response-times.html.mean%2C10)%2C%22A2%22)&target=alias(movingAverage(stats.timers.cq.publisher-p1.response-times.html.mean%2C10)%2C%22P1%22)&target=alias(movingAverage(stats.timers.cq.publisher-p2.response-times.html.mean%2C10)%2C%22P2%22)&target=alias(movingAverage(stats.timers.cq.publisher-p3.response-times.html.mean%2C10)%2C%22P3%22)&vtitle=milliseconds&title=HTML%20Response%20Times&hideLegend=false&bgcolor=222222&fgcolor=FFFFFF"></div>
+    </li>
+
+    <!-- Bamboo Deploys -->
+    <li data-row="3" data-col="3" data-sizex="1" data-sizey="1">
+        <div data-id="cq_bamboo_list" data-view="BambooList"></div>
+    </li>
+
+    <!-- Workflow Stats -->
+    <li data-row="4" data-col="3" data-sizex="1" data-sizey="1">
+      <div data-id="author_workflow_stats" data-view="WorkflowStats"></div>
+    </li>
+  </ul>
+</div>
