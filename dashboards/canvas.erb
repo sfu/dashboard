@@ -11,12 +11,12 @@ $(function() {
   <ul>
 
     <!-- Logo -->
-    <li data-row="1" data-col="3" data-sizex="1" data-sizey="1">
+    <li data-row="3" data-col="3" data-sizex="1" data-sizey="1">
       <div data-view="Image" data-image="/canvas_logo.png"></div>
     </li>
 
     <!-- Clock -->
-    <li data-row="2" data-col="3" data-sizex="1" data-sizey="1">
+    <li data-row="4" data-col="3" data-sizex="1" data-sizey="1">
       <div data-view="Clock"></div>
     </li>
 
@@ -29,65 +29,39 @@ $(function() {
     </li>
 
     <!-- Bamboo Deploys -->
-    <li data-row="3" data-col="3" data-sizex="1" data-sizey="1">
+    <li data-row="5" data-col="1" data-sizex="1" data-sizey="1">
         <div data-id="bamboo_list" data-view="BambooList"></div>
     </li>
 
     <!-- Google Anaylitcs -->
-    <li data-row="3" data-col="1" data-sizex="1" data-sizey="2">
-        <div data-id="active_users" data-view="GAUserCount" data-title="Active Users"></div>
-    </li>
-
-    <!-- Enrollments -->
-    <li data-row="3" data-col="5" data-sizex="1" data-sizey="2">
-        <div data-id="enrollments" data-view="List" data-unordered="true" data-title="Enrollments" data-moreinfo="(current term)"></div>
-    </li>
-
-    <!-- Github PRs -->
-    <li data-row="3" data-col="2" data-sizex="1" data-sizey="1">
-        <div data-id="github_pull_requests" data-view="GithubNumber" data-titlelower="Open Pull Requests" data-moreinfo="on branch sfu-develop"></div>
+    <li data-row="1" data-col="3" data-sizex="1" data-sizey="2">
+        <div data-id="active_users" data-view="GAUserCount" data-title="Active Web Users"></div>
     </li>
 
     <!-- Github Commits Behind -->
-    <li data-row="3" data-col="4" data-sizex="1" data-sizey="1">
+    <li data-row="5" data-col="2" data-sizex="1" data-sizey="1">
         <div data-id="github_branch_comparison" data-view="GithubNumber" data-titleupper="sfu-deploy is" data-titlelower="commits behind sfu-develop"></div>
     </li>
 
+    <!-- Github PRs -->
+    <li data-row="6" data-col="2" data-sizex="1" data-sizey="1">
+        <div data-id="github_pull_requests" data-view="GithubNumber" data-titlelower="Open Pull Requests" data-moreinfo="on branch sfu-develop"></div>
+    </li>
+
     <!-- Delayed Job Counts -->
-    <li data-row="4" data-col="3" data-sizex="1" data-sizey="1">
+    <li data-row="6" data-col="1" data-sizex="1" data-sizey="1">
       <div data-id="delayed_job_counts" data-view="DelayedJobCounts"></div>
     </li>
 
+    <!-- Enrollments -->
+    <li data-row="5" data-col="3" data-sizex="1" data-sizey="2" class="gs_w">
+     <div data-id="enrollments" data-view="List" data-unordered="true" data-title="Enrollments" data-moreinfo="(current term)"></div>
+    </li>
+
+
     <!-- App Node Statuses -->
-    <li data-row="5" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="node_status_ap1" data-view="NodeStatus"></div>
-    </li>
-    <li data-row="5" data-col="2" data-sizex="1" data-sizey="1">
-      <div data-id="node_status_ap2" data-view="NodeStatus"></div>
-    </li>
-    <li data-row="5" data-col="3" data-sizex="1" data-sizey="1">
-      <div data-id="node_status_ap3" data-view="NodeStatus"></div>
-    </li>
-    <li data-row="5" data-col="4" data-sizex="1" data-sizey="1">
-      <div data-id="node_status_ap4" data-view="NodeStatus"></div>
-    </li>
-    <li data-row="5" data-col="5" data-sizex="1" data-sizey="1">
-      <div data-id="node_status_ap5" data-view="NodeStatus"></div>
-    </li>
-    <li data-row="6" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="node_status_ap6" data-view="NodeStatus"></div>
-    </li>
-    <li data-row="6" data-col="2" data-sizex="1" data-sizey="1">
-      <div data-id="node_status_ap7" data-view="NodeStatus"></div>
-    </li>
-    <li data-row="6" data-col="3" data-sizex="1" data-sizey="1">
-      <div data-id="node_status_ap8" data-view="NodeStatus"></div>
-    </li>
-    <li data-row="6" data-col="4" data-sizex="1" data-sizey="1">
-      <div data-id="node_status_ap9" data-view="NodeStatus"></div>
-    </li>
-    <li data-row="6" data-col="5" data-sizex="1" data-sizey="1">
-      <div data-id="node_status_ap10" data-view="NodeStatus"></div>
+    <li data-row="4" data-col="1" data-sizex="2" data-sizey="6">
+      <div data-id="canvas_node_table" data-view="NodeTable" style="vertical-align:top"></div>
     </li>
 
   </ul>

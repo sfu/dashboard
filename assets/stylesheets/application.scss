@@ -154,11 +154,11 @@ h3 {
   border-radius: $widget-border-radius;
 }
 
-.widget.status-safe {
+.widget.status-safe, td.status-safe{
   background-color: $background-safe-color;
 }
 
-.widget.status-warning {
+.widget.status-warning, td.status-warning {
   background-color: $background-warning-color-1;
   @include animation(status-warning-background, 2s, ease, infinite);
 
@@ -171,7 +171,7 @@ h3 {
   }
 }
 
-.widget.status-danger {
+.widget.status-danger, td.status-danger {
   color: $text-danger-color;
   background-color: $background-danger-color-1;
   @include animation(status-danger-background, 2s, ease, infinite);
