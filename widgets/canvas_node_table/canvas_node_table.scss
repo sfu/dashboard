@@ -1,0 +1,19 @@
+$borderRadius: 5px;
+$background: #222222;
+
+.canvas_node_table {
+    height: 100%;
+    border-collapse: separate;
+    border-spacing: 0 5px;
+
+    td:first-of-type {
+        border-top-left-radius: $borderRadius;
+        border-bottom-left-radius: $borderRadius;
+    }
+
+    td:last-of-type {
+        border-top-right-radius: $borderRadius;
+        border-bottom-right-radius: $borderRadius;
+    }
+
+}
