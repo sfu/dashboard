@@ -1,7 +1,6 @@
 class Dashing.DelayedJobCounts extends Dashing.Widget
 
   onData: (data) ->
-    console.log(data)
     $(@get('node')).attr 'class', (i,c) ->
         c.replace /\bstatus-\S+/g, ''
 
