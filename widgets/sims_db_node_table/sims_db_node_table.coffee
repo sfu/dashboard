@@ -29,9 +29,9 @@ class Dashing.SimsDbNodeTable extends Dashing.Widget
       '</td><td class="status-' + data.status + '">',
       data.CPU + '%',
       '</td><td class="status-' + data.status + '">',
-      data.MEM,
+      data.MEM + '%',
       '</td><td class="status-' + data.status + '">',
-      data.SWAP,
+      data.SWAP + '%',
       '</td><td class="status-' + data.status + '">',
       timestampToHoursMinutesSeconds(data.updatedAt),
       '</td></tr>'

@@ -29,7 +29,7 @@ class Dashing.SimsWebNodeTable extends Dashing.Widget
       '</td><td class="status-' + data.status + '">',
       data.CPU + '%',
       '</td><td class="status-' + data.status + '">',
-      data.MEM,
+      data.MEM + '%',
       '</td><td class="status-' + data.status + '">',
       data.Port1,
       '</td><td class="status-' + data.status + '">',
