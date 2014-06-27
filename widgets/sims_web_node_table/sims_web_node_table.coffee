@@ -24,7 +24,7 @@ class Dashing.SimsWebNodeTable extends Dashing.Widget
   template = (data) ->
     [
       '<tr data-web-server="' + data.server + '">',
-      '<td height="47" class="status-' + data.status + '">',
+      '<td class="status-' + data.status + '">',
       data.server.toUpperCase(),
       '</td><td class="status-' + data.status + '">',
       data.CPU + '%',
