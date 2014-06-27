@@ -1,0 +1,45 @@
+<script type='text/javascript'>
+$(function() {
+  Dashing.widget_base_dimensions = [374, 170]
+  Dashing.numColumns = 5
+});
+</script>
+
+
+<% content_for :title do %>SIMS Status Dashboard<% end %>
+<div class="gridster">
+  <ul>
+
+    <!-- Logo -->
+    <li data-row="3" data-col="3" data-sizex="1" data-sizey="1">
+      <div data-view="Image" data-image="/sims.png"></div>
+    </li>
+
+    <!-- Clock -->
+    <li data-row="4" data-col="3" data-sizex="1" data-sizey="1">
+      <div data-view="Clock"></div>
+    </li>
+
+
+    <!-- Web Node Statuses -->
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="3">
+      <div data-id="sims_web_status" data-view="SimsWebNodeTable" style="vertical-align:top"></div>
+    </li>
+
+    <!-- DB Node Statuses -->
+    <li data-row="4" data-col="1" data-sizex="2" data-sizey="2">
+      <div data-id="sims_db_status" data-view="SimsDbNodeTable" style="vertical-align:top"></div>
+    </li>
+
+    <!-- WIN Server Node Statuses -->
+    <li data-row="6" data-col="1" data-sizex="2" data-sizey="1">
+      <div data-id="sims_win_status" data-view="SimsWinNodeTable" style="vertical-align:top"></div>
+    </li>
+
+    <!-- App Node Statuses -->
+    <li data-row="1" data-col="4" data-sizex="2" data-sizey="6">
+      <div data-id="sims_app_status" data-view="SimsAppNodeTable" style="vertical-align:top"></div>
+    </li>
+
+  </ul>
+</div>
