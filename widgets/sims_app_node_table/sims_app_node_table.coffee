@@ -1,9 +1,14 @@
 class Dashing.SimsAppNodeTable extends Dashing.Widget
 
   sortCompare = (a, b) ->
-    a = parseInt(a.cells[0].textContent.substr(2), 10)
-    b = parseInt(b.cells[0].textContent.substr(2), 10)
-    a - b
+    a = a.cells[0].textContent
+    b = b.cells[0].textContent
+    comparator = 0
+    if a < b 
+      return -1
+    if a > b 
+      return 1
+    return 0
 
   sortTable = (table) ->
     tBody = table.tBodies[0]

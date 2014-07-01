@@ -1,9 +1,14 @@
 class Dashing.SimsDbNodeTable extends Dashing.Widget
 
   sortCompare = (a, b) ->
-    a = parseInt(a.cells[0].textContent.substr(2), 10)
-    b = parseInt(b.cells[0].textContent.substr(2), 10)
-    a - b
+    a = a.cells[0].textContent
+    b = b.cells[0].textContent
+    comparator = 0
+    if a < b 
+      return -1
+    if a > b 
+      return 1
+    return 0
 
   sortTable = (table) ->
     tBody = table.tBodies[0]
@@ -42,7 +47,6 @@ class Dashing.SimsDbNodeTable extends Dashing.Widget
     id.split('_')[2].toUpperCase()
 
   onData: (data) ->
-    console.log(data);
     html = template(data);
     $table = $(this.node).find('table');
     if ($table.length)
