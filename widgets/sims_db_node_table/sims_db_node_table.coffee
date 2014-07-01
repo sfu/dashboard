@@ -47,7 +47,7 @@ class Dashing.SimsDbNodeTable extends Dashing.Widget
     $table = $(this.node).find('table');
     if ($table.length)
       # if a row with the same id exists in the table, update it
-      targetRow = $('[data-server="' + data.server + '"]')
+      targetRow = $('[data-db-server="' + data.server + '"]')
       if (targetRow.length)
         targetRow.replaceWith(html)
       # otherwise, append a new one

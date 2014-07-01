@@ -45,7 +45,7 @@ class Dashing.SimsWinNodeTable extends Dashing.Widget
     if ($table.length)
       debugger
       # if a row with the same id exists in the table, update it
-      targetRow = $('[data-server="' + data.server + '"]')
+      targetRow = $('[data-wsin-erver="' + data.server + '"]')
       if (targetRow.length)
         targetRow.replaceWith(html)
       # otherwise, append a new one
