@@ -7,7 +7,7 @@ GIT
 
 GIT
   remote: git://github.com/sfu/dashing.git
-  revision: f3249c2f153185123c078ae1afb12086e824ae5c
+  revision: f2098b333b422ce33137bcafc3efa817fabe78fa
   specs:
     dashing (1.3.2)
       coffee-script (~> 2.2.0)
