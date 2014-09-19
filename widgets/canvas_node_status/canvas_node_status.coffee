@@ -1,0 +1,1 @@
+class Dashing.CanvasNodeStatus extends Dashing.Widget

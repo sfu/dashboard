@@ -1,0 +1,33 @@
+$borderRadius: 5px;
+$background: #222222;
+
+.widget-canvas-node-status {
+
+    padding-bottom: 0 !important;
+    padding-top: 0 !important;
+
+    table {
+        height: 100%;
+        border-collapse: separate;
+        border-spacing: 0 5px;
+
+        th {
+            font-weight: normal;
+        }
+
+        tr {
+            min-height:46px;
+        }
+
+        td:first-of-type {
+            border-top-left-radius: $borderRadius;
+            border-bottom-left-radius: $borderRadius;
+        }
+
+        td:last-of-type {
+            border-top-right-radius: $borderRadius;
+            border-bottom-right-radius: $borderRadius;
+        }
+    }
+
+}
