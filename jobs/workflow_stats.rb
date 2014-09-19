@@ -1,5 +1,7 @@
 require 'rest-client'
 
+config = YAML.load File.open("config/cq.yml")
+
 def workflow_stats(cq_info)
   url = URI.parse cq_info.fetch(:hostname)
   url.user = cq_info.fetch(:username)
@@ -42,6 +44,6 @@ def ten_minutes_ago
 end
 
 SCHEDULER.every '30s' do
-  stats = workflow_stats(settings.cq[:author_p2])
+  stats = workflow_stats(config[:author_p2])
   send_event 'author_workflow_stats', { items: stats }
 end

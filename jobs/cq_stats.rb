@@ -1,6 +1,8 @@
 require 'rest-client'
 require 'json'
 
+config = YAML.load File.open("config/cq.yml")
+
 def published_pages(cq_node)
   response = RestClient.get url(cq_node).to_s, params: {
     type: "cq:Page",
@@ -50,8 +52,8 @@ class Fixnum
   end
 end
 
-SCHEDULER.every '10s', first_in: '1s' do
-  cq_node = settings.cq.fetch(:publisher_p4)
+SCHEDULER.every '10s' do
+  cq_node = config[:publisher_p4]
 
   stats = {
     "Top-level Sites" => top_level_sites(cq_node),

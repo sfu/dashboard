@@ -1,5 +1,7 @@
 require 'github_api'
 
+config = YAML.load File.open("config/github.yml")
+
 def get_status_label(id, value)
   levels = ['safe', 'warning', 'danger']
   thresholds = {
@@ -23,7 +25,7 @@ end
 
 
 SCHEDULER.every '1m', :first_in => '20s' do
-  github = Github.new basic_auth: "#{settings.github[:username]}:#{settings.github[:token]}"
+  github = Github.new basic_auth: "#{config["username"]}:#{config["token"]}"
   pulls = github.pulls.all 'sfu', 'canvas-lms'
   compare = github.repos.commits.compare 'sfu', 'canvas-lms', 'sfu-deploy', 'sfu-develop'
 
