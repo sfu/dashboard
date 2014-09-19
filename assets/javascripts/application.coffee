@@ -28,3 +28,6 @@ Dashing.on 'ready', ->
       widget_base_dimensions: Dashing.widget_base_dimensions,
       avoid_overlapped_widgets: true #!Dashing.customGridsterLayout
     }).data('gridster').disable();
+
+  Batman.Filters.titleize = (string) ->
+    string.replace /(^|\s)([a-z])/g, (m, p1, p2) -> p1 + p2.toUpperCase()
