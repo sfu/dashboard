@@ -6,13 +6,6 @@ configure do
   set :default_dasbhoard, 'canvas'
   set :auth_token, ENV['AUTH_TOKEN'] || SecureRandom.uuid
 
-  Dir.glob('config/*.yml').each do |f|
-    config_name = File.basename(f, '.*')
-    raw_config = File.read(f)
-    config = YAML.load(raw_config).symbolize_keys
-    set config_name.to_sym, Proc.new { config }
-  end
-
   helpers do
     def protected!
      # Put any authentication code you want in here.
