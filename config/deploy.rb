@@ -11,7 +11,10 @@ set :normalize_asset_timestamps, false
 
 default_run_options[:shell] = '/bin/bash --login'
 
-server "rails1.its.sfu.ca", :app, :web, :db, :primary => true
+server "rails-p1.tier2.sfu.ca", :app, :web, :db, :primary => true
+
+gateway_user =  ENV['gateway_user'] || ENV['USER']
+set :gateway, "#{gateway_user}@welcome.its.sfu.ca"
 
 after 'deploy:update_code' do
   run "cp #{shared_path}/config/* #{release_path}/config"
