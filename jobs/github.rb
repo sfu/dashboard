@@ -26,7 +26,7 @@ end
 
 
 SCHEDULER.every '1m', :first_in => '20s' do
-  github = Github.new basic_auth: "#{$config["username"]}:#{$config["token"]}"
+  github = Github.new basic_auth: "#{$config[:github]["username"]}:#{$config[:github]["token"]}"
   pulls = github.pulls.all 'sfu', 'canvas-lms'
   compare = github.repos.commits.compare 'sfu', 'canvas-lms', 'sfu-deploy', 'sfu-develop'
 
