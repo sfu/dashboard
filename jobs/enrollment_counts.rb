@@ -2,7 +2,7 @@ require 'net/http'
 require 'uri'
 require 'json'
 
-config = YAML.load File.open("config/canvas.yml")
+$config = YAML.load File.open("$config/canvas.yml")
 
 def get_enrollments(canvas_url, canvas_token)
   uri = URI.parse(canvas_url)
@@ -17,7 +17,7 @@ def get_enrollments(canvas_url, canvas_token)
 end
 
 SCHEDULER.every '3h', :first_in => '45s' do
-  enrollments = get_enrollments(config[:url_base] + config[:enrollments][:path], config[:auth_token])
+  enrollments = get_enrollments($config[:url_base] + $config[:enrollments][:path], $config[:auth_token])
   data = []
   enrollments["unique"].each do |key,value|
     label = key.dup

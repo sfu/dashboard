@@ -1,12 +1,12 @@
 require 'bamboo_api'
 
-config = YAML.load File.open("config/bamboo.yml")
+$config = YAML.load File.open("$config/bamboo.yml")
 
 SCHEDULER.every '30s' do
   BambooApi.new({
-    end_point: config["bamboo_host"],
-    username: config["bamboo_username"],
-    password: config["bamboo_password"]
+    end_point: $config["bamboo_host"],
+    username: $config["bamboo_username"],
+    password: $config["bamboo_password"]
   })
 
   def get_plan_status(plan)
@@ -27,10 +27,10 @@ SCHEDULER.every '30s' do
   end
   
   # Canvas plans
-  items = config["plan_keys"].map { |p| get_plan_status(p) }
+  items = $config["plan_keys"].map { |p| get_plan_status(p) }
   send_event('bamboo_list', { items: items })
 
   # CQ plans
-  items = config["cq_plan_keys"].map { |p| get_plan_status(p) }
+  items = $config["cq_plan_keys"].map { |p| get_plan_status(p) }
   send_event('cq_bamboo_list', { items: items })
 end
