@@ -21,7 +21,8 @@ SCHEDULER.every '30s' do
       build_relative_time: build.build_relative_time,
       icon: "icon-#{build.state.downcase}"
     }
-    data[:name].slice! 'Deploy to '
+    #data[:name].slice! 'Deploy to '
+    data[:name] = data[:name].split("Deploy to" )[1]
     data
   end
   
