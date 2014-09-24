@@ -27,7 +27,7 @@ def get_node_stats
 
 end
 
-SCHEDULER.every '10s', :first_in => '6s' do
+SCHEDULER.every '3s', :first_in => '6s' do
   data = get_node_stats
   data = data.values.sort { |a,b| a['server'][2..-1].to_i <=> b['server'][2..-1].to_i }
   send_event('canvas_node_status', {data: data})
