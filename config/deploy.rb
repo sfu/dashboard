@@ -8,6 +8,8 @@ set :user, "rails"
 set :ssh_options, { :forward_agent => true }
 set :deploy_to, "/home/rails/apps/#{application}"
 set :normalize_asset_timestamps, false
+set :bundle_dir,    ".bundle"
+set :bundle_flags,  "--binstubs bin"
 
 default_run_options[:shell] = '/bin/bash --login'
 
