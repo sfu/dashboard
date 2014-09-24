@@ -1,6 +1,6 @@
 require 'bamboo_api'
 
-$config = YAML.load File.open("$config/bamboo.yml")
+$config = YAML.load File.open("config/bamboo.yml")
 
 SCHEDULER.every '30s' do
   BambooApi.new({

@@ -1,6 +1,6 @@
 require 'rest-client'
 
-$config = YAML.load File.open("$config/cq.yml")
+$config = YAML.load File.open("config/cq.yml")
 
 def workflow_stats(cq_info)
   url = URI.parse cq_info.fetch(:hostname)

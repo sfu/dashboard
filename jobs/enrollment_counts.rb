@@ -2,7 +2,7 @@ require 'net/http'
 require 'uri'
 require 'json'
 
-$config = YAML.load File.open("$config/canvas.yml")
+$config = YAML.load File.open("config/canvas.yml")
 
 def get_enrollments(canvas_url, canvas_token)
   uri = URI.parse(canvas_url)

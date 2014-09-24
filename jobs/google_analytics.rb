@@ -2,7 +2,7 @@ require 'net/http'
 require 'uri'
 require 'json'
 
-$config = YAML.load File.open("$config/google_analytics.yml")
+$config = YAML.load File.open("config/google_analytics.yml")
 
 current_count = 0
 

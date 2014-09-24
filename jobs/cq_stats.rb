@@ -1,7 +1,7 @@
 require 'rest-client'
 require 'json'
 
-$config = YAML.load File.open("$config/cq.yml")
+$config = YAML.load File.open("config/cq.yml")
 
 def published_pages(cq_node)
   response = RestClient.get url(cq_node).to_s, params: {
