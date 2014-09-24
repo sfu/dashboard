@@ -1,7 +1,8 @@
 require 'rest-client'
 require 'json'
 
-$config = YAML.load File.open("config/cq.yml")
+$config = $config || Hash.new
+$config[:cq] = YAML.load File.open("config/cq.yml")
 
 def published_pages(cq_node)
   response = RestClient.get url(cq_node).to_s, params: {
@@ -53,7 +54,7 @@ class Fixnum
 end
 
 SCHEDULER.every '10s' do
-  cq_node = $config[:publisher_p4]
+  cq_node = $config[:cq][:publisher_p4]
 
   stats = {
     "Top-level Sites" => top_level_sites(cq_node),

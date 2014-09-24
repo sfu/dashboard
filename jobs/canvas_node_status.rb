@@ -8,7 +8,7 @@ require 'json'
 require 'net/http'
 require 'uri'
 
-$config = Hash.new
+$config = $config || Hash.new
 $config[:f5] = YAML.load File.open("config/f5.yml")
 $config[:dashboard_node_status] = YAML.load File.open("config/dashboard_node_status.yml")
 

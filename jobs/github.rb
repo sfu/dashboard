@@ -1,6 +1,7 @@
 require 'github_api'
 
-$config = YAML.load File.open("config/github.yml")
+$config = $config || Hash.new
+$config[:github] = YAML.load File.open("config/github.yml")
 
 def get_status_label(id, value)
   levels = ['safe', 'warning', 'danger']
