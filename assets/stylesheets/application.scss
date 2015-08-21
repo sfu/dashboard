@@ -211,31 +211,7 @@ h3 {
 }
 
 .widget.status-awesome, td.status-awesome {
-  background-image:-webkit-linear-gradient( left, red, orange, yellow, green,
-                                          blue, indigo, violet, indigo, blue,
-                                          green, yellow, orange, red );
-  background-image:-moz-linear-gradient( left, red, orange, yellow, green,
-                                         blue,indigo, violet, indigo, blue,
-                                         green, yellow, orange,red );
-  background-image:-o-linear-gradient( left, red, orange, yellow, green,
-                                         blue,indigo, violet, indigo, blue,
-                                         green, yellow, orange,red );
-  background-image:-ms-linear-gradient( left, red, orange, yellow, green,
-                                         blue,indigo, violet, indigo, blue,
-                                         green, yellow, orange,red );
-  background-image:-khtml-linear-gradient( left, red, orange, yellow, green,
-                                         blue,indigo, violet, indigo, blue,
-                                         green, yellow, orange,red );
-  background-image:linear-gradient( left, red, orange, yellow, green,
-                                         blue,indigo, violet, indigo, blue,
-                                         green, yellow, orange,red );
-  -moz-animation:charlieeee 2.5s forwards linear infinite;
-  -webkit-animation:charlieeee 2.5s forwards linear infinite;
-  -o-animation:charlieeee 2.5s forwards linear infinite;
-  -khtml-animation:charlieeee 2.5s forwards linear infinite;
-  -ms-animation:charlieeee 2.5s forwards linear infinite;
-  -lynx-animation:charlieeee 2.5s forwards linear infinite;
-  animation:charlieeee 2.5s forwards linear infinite;
+  @include animation(charlieeee, 10s, linear, infinite)
   background-size: 200% auto;
 }
 
