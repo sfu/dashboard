@@ -4,10 +4,10 @@ $config = $config || Hash.new
 $config[:github] = YAML.load File.open("config/github.yml")
 
 def get_status_label(id, value)
-  levels = ['safe', 'warning', 'danger']
+  levels = ['safe', 'awesome']
   thresholds = {
-    "github_pull_requests" => [0, 1, 3],
-    "github_branch_comparison" => [0, 3, 5]
+    "github_pull_requests" => [0, 1],
+    "github_branch_comparison" => [0, 1]
   }
 
   level = levels[0]
@@ -15,9 +15,7 @@ def get_status_label(id, value)
   if thresholds[id].index value
     level = levels[thresholds[id].index value]
   else
-    if value >= thresholds[id][2]
-      level = levels[2]
-    elsif value >= thresholds[id][1]
+    if value >= thresholds[id][1]
       level = levels[1]
     end
   end
