@@ -20,6 +20,8 @@ $text-danger-color: #fff;
 
 $widget-border-radius: 5px;
 
+$rainbow-duration: 10s;
+
 @-webkit-keyframes status-warning-background {
   0%   { background-color: $background-warning-color-1; }
   50%  { background-color: $background-warning-color-2; }
@@ -212,6 +214,31 @@ h3 {
 
 .widget.status-awesome, td.status-awesome {
   @include animation(charlieeee, 10s, linear, infinite)
+  background-image:-webkit-linear-gradient( left, red, orange, yellow, green,
+                                          blue, indigo, violet, indigo, blue,
+                                          green, yellow, orange, red );
+  background-image:-moz-linear-gradient( left, red, orange, yellow, green,
+                                         blue,indigo, violet, indigo, blue,
+                                         green, yellow, orange,red );
+  background-image:-o-linear-gradient( left, red, orange, yellow, green,
+                                         blue,indigo, violet, indigo, blue,
+                                         green, yellow, orange,red );
+  background-image:-ms-linear-gradient( left, red, orange, yellow, green,
+                                         blue,indigo, violet, indigo, blue,
+                                         green, yellow, orange,red );
+  background-image:-khtml-linear-gradient( left, red, orange, yellow, green,
+                                         blue,indigo, violet, indigo, blue,
+                                         green, yellow, orange,red );
+  background-image:linear-gradient( left, red, orange, yellow, green,
+                                         blue,indigo, violet, indigo, blue,
+                                         green, yellow, orange,red );
+  -moz-animation:charlieeee $rainbow-duration forwards linear infinite;
+  -webkit-animation:charlieeee $rainbow-duration forwards linear infinite;
+  -o-animation:charlieeee $rainbow-duration forwards linear infinite;
+  -khtml-animation:charlieeee $rainbow-duration forwards linear infinite;
+  -ms-animation:charlieeee $rainbow-duration forwards linear infinite;
+  -lynx-animation:charlieeee $rainbow-duration forwards linear infinite;
+  animation:charlieeee $rainbow-duration forwards linear infinite;
   background-size: 200% auto;
 }
 
