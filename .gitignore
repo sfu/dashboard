@@ -4,3 +4,4 @@ config/*.yml
 /config/google-analytics-privatekey.p12
 bin
 .bundle
+tmp/*
