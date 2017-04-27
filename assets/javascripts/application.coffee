@@ -31,3 +31,9 @@ Dashing.on 'ready', ->
 
   Batman.Filters.titleize = (string) ->
     string.replace /(^|\s)([a-z])/g, (m, p1, p2) -> p1 + p2.toUpperCase()
+
+  Batman.Filters.statusify = (pool, status) ->
+    if status == 'ENABLED_STATUS_DISABLED'
+      "#{pool} (•)"
+    else
+      pool
