@@ -213,7 +213,6 @@ h3 {
 }
 
 .widget.status-awesome, td.status-awesome {
-  @include animation(charlieeee, 10s, linear, infinite)
   background-image:-webkit-linear-gradient( left, red, orange, yellow, green,
                                           blue, indigo, violet, indigo, blue,
                                           green, yellow, orange, red );
