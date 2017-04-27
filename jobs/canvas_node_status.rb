@@ -12,6 +12,10 @@ $config = $config || Hash.new
 $config[:f5] = YAML.load File.open("config/f5.yml")
 $config[:dashboard_node_status] = YAML.load File.open("config/dashboard_node_status.yml")
 
+def pool_name(node)
+
+end
+
 # pull status information from the aggregator every 10s
 def get_node_stats
   path = '/service/canvas'
@@ -21,7 +25,8 @@ def get_node_stats
   data = JSON.parse(response.body)
   data.each do | node, stats |
     data[node] = JSON.parse(stats)
-    data[node]["f5_pool"] = $pool_members[node] || "-"
+    data[node]["f5_pool"] = $pool_members[node][:type] || "-"
+    data[node]["f5_status"] = $pool_members[node][:status]
     data[node]["passenger_queue"] ||= "-"
   end
 
@@ -53,7 +58,10 @@ SCHEDULER.every '30s', :first_in => '1s' do
     members.first.each do | entry |
       hostname = Resolv.new.getname(entry.member.address)
       hostname = hostname.scan( /\w{2}\d{1,}/ )[0]
-      pool_members[hostname] = type
+      pool_members[hostname] = {
+        :type => type,
+        :status => entry.object_status.enabled_status
+      }
     end
   end
   $pool_members = pool_members

@@ -12,7 +12,7 @@
     <tbody>
         <tr data-foreach-item="data">
             <td data-bind-class="item.status | prepend 'status-'" data-bind="item.server | upcase"></td>
-            <td data-bind-class="item.status | prepend 'status-'" data-bind="item.f5_pool | titleize"></td>
+            <td data-bind-class="item.status | prepend 'status-'" data-bind="item.f5_pool | titleize | statusify item.f5_status"></td>
             <td data-bind-class="item.status | prepend 'status-'" data-bind="item.cpu_perc | append '%'"></td>
             <td data-bind-class="item.status | prepend 'status-'" data-bind="item.passenger_queue"></td>
             <td data-bind-class="item.status | prepend 'status-'" data-bind="item.updated_at"></td>
