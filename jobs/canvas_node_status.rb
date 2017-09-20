@@ -38,7 +38,10 @@ SCHEDULER.every '3s', :first_in => '6s' do
   send_event('canvas_node_status', {data: data})
 end
 
-
+# refresh the canvas app nodes mean response time graph
+#SCHEDULER.every '60s', :first_in => '6s' do
+#  send_event('canvas_app_servers_rails_response_time', {app_nodes: $app_nodes})
+#end
 
 # update pool members from the F5 every 30s
 wsdls = ["LocalLB.PoolMember"]
@@ -51,13 +54,16 @@ def get_pool_members(pool)
   $f5["LocalLB.PoolMember"].get_object_status pool
 end
 $pool_members = nil
+$app_nodes = nil
 SCHEDULER.every '30s', :first_in => '1s' do
   pool_members = Hash.new
+  app_nodes = []
   f5_pools.each do | type, pool_name |
     members = get_pool_members pool_name
     members.first.each do | entry |
       hostname = Resolv.new.getname(entry.member.address)
       hostname = hostname.scan( /\w{2}\d{1,}/ )[0]
+      app_nodes.push(hostname.gsub(/^ap/, '').to_i) if type == :app && entry.object_status.enabled_status == "ENABLED_STATUS_ENABLED"
       pool_members[hostname] = {
         :type => type,
         :status => entry.object_status.enabled_status
@@ -65,4 +71,6 @@ SCHEDULER.every '30s', :first_in => '1s' do
     end
   end
   $pool_members = pool_members
+  $app_nodes = app_nodes.sort.map {|x| "ap#{x}"}
+  send_event('canvas_app_servers_rails_response_time', {app_nodes: app_nodes.sort.map {|x| "ap#{x}"}})
 end
