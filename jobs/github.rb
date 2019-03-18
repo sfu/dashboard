@@ -25,8 +25,8 @@ end
 
 SCHEDULER.every '1m', :first_in => '20s' do
   github = Github.new basic_auth: "#{$config[:github]["username"]}:#{$config[:github]["token"]}"
-  pulls = github.pulls.all 'sfu', 'canvas-lms'
-  compare = github.repos.commits.compare 'sfu', 'canvas-lms', 'sfu-deploy', 'sfu-develop'
+  pulls = github.pulls.all 'sfu', 'canvas-lms-internal'
+  compare = github.repos.commits.compare 'sfu', 'canvas-lms-internal', 'sfu-deploy', 'sfu-develop'
 
   send_event('github_pull_requests', { current: pulls.count, status: get_status_label('github_pull_requests', pulls.count) })
   send_event('github_branch_comparison', { current: compare.ahead_by, status: get_status_label('github_branch_comparison', compare.ahead_by) })
