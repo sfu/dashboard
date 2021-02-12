@@ -6,7 +6,7 @@ $(function() {
 </script>
 
 
-<% content_for :title do %>Canvas Status Dashboard<% end %>
+<% content_for :title do %>Canvas NSX Status Dashboard<% end %>
 <div class="gridster">
   <ul>
 
@@ -22,7 +22,7 @@ $(function() {
 
     <!-- Graphite Graphs -->
     <li data-row="1" data-col="1" data-sizex="2" data-sizey="2">
-      <div data-width="748" data-height="340" data-view="Graphite" data-image="http://stats.its.sfu.ca/render/?bgcolor=222222&fgcolor=FFFFFF&hideGrid=false&graphOnly=false&_salt=1381276337.428&from=-24hours&target=alias(stacked(hitcount(scale(sumSeries(*.timers.canvas.production.lcp-canvas-ap*.rails.responseTime.count)%2C0.1)%2C%221h%22)),%20'Rails')&target=alias(stacked(hitcount(sumSeries(stats.canvas.production.lcp-canvas-ap*.apache.response.*)%2C%221h%22)),%20'Apache')&target=color(alias(secondYAxis(stats.gauges.canvas.production.analytics.activeUsers),'Active%20Users'),'FFFF66')&title=Apache%20%26%20Rails%20Hits%2FHour%20vs.%20Active%20Users"></div>
+      <div data-width="748" data-height="340" data-view="Graphite" data-image="http://stats.its.sfu.ca/render/?bgcolor=222222&fgcolor=FFFFFF&hideGrid=false&graphOnly=false&_salt=1381276337.428&from=-24hours&target=alias(stacked(hitcount(scale(sumSeries(*.timers.canvas.production.canvas-ap*.rails.responseTime.count)%2C0.1)%2C%221h%22)),%20'Rails')&target=alias(stacked(hitcount(sumSeries(stats.canvas.production.canvas-ap*.apache.response.*)%2C%221h%22)),%20'Apache')&target=color(alias(secondYAxis(stats.gauges.canvas.production.analytics.activeUsers),'Active%20Users'),'FFFF66')&title=Apache%20%26%20Rails%20Hits%2FHour%20vs.%20Active%20Users"></div>
     </li>
     <li data-row="3" data-col="1" data-sizex="2" data-sizey="2">
     <div data-width="748" data-height="340" data-id="canvas_app_servers_rails_response_time" data-view="CanvasAppServersRailsResponseTime" />
@@ -61,7 +61,7 @@ $(function() {
 
     <!-- App Node Statuses -->
     <li data-row="4" data-col="1" data-sizex="2" data-sizey="6">
-      <div data-id="canvas_node_status" data-view="CanvasNodeStatus" style="vertical-align:top"></div>
+      <div data-id="app_node_status" data-view="AppNodeStatus" style="vertical-align:top"></div>
     </li>
 
   </ul>
