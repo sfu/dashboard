@@ -20,7 +20,7 @@ def get_stats(url)
 end
 
 
-SCHEDULER.every '10s' do
+SCHEDULER.every '30s' do
   last_count = current_count
   stats = get_stats($config[:google_analytics][:cache_url])
   current_count = stats['data']['ga:activevisitors']
