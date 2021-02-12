@@ -1,6 +1,6 @@
 $background-failed-color-1: #e82711;
 $background-failed-color-2: #9b2d23;
-$background-successful-color: #008800;
+$background-success-color: #008800;
 $border-radius: 5px;
 
 @-webkit-keyframes status-failed-background {
@@ -25,7 +25,7 @@ $border-radius: 5px;
     font-style: normal;
 }
 
-.icon-successful, .icon-failed {
+.icon-success, .icon-failed {
     font-family: 'icomoon';
     speak: none;
     font-style: normal;
@@ -35,7 +35,7 @@ $border-radius: 5px;
     line-height: inherit;
     -webkit-font-smoothing: antialiased;
 }
-.icon-successful:before {
+.icon-success:before {
     content: "\e000";
 }
 .icon-failed:before {
@@ -47,6 +47,7 @@ $border-radius: 5px;
     background-color: transparent;
     border-radius: 0;
     padding: 0 !important;
+    font-size: 0.8em;
 
     li {
         line-height: 2.8em;
@@ -64,18 +65,21 @@ $border-radius: 5px;
             float: left;
         }
         .icon_container {
-            width: 15%;
-            padding-right: 10px;
+            padding: 0 10px;
         }
 
+		.name { 
+		    width: 25%; 
+		}
+
+
         .name, .date {
-            width:40%;
             text-align: left;
         }
     }
 
-    .successful {
-        background-color: $background-successful-color;
+    .success {
+        background-color: $background-success-color;
     }
 
     .failed {

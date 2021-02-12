@@ -53,19 +53,19 @@ class Fixnum
   end
 end
 
-SCHEDULER.every '10s' do
-  cq_node = $config[:cq][:publisher_p4]
-
-  stats = {
-    "Top-level Sites" => top_level_sites(cq_node),
-    "Published Pages" => published_pages(cq_node),
-    "Published Assets" => published_assets(cq_node)
-  }
-
-  data = []
-  stats.each do |label, value|
-    data << { label: label, value: value }
-  end
-
-  send_event('cq_stats', {items: data})
-end
+#SCHEDULER.every '10s' do
+#  cq_node = $config[:cq][:publisher_p4]
+#
+#  stats = {
+#    "Top-level Sites" => top_level_sites(cq_node),
+#    "Published Pages" => published_pages(cq_node),
+#    "Published Assets" => published_assets(cq_node)
+#  }
+#
+#  data = []
+#  stats.each do |label, value|
+#    data << { label: label, value: value }
+#  end
+#
+#  send_event('cq_stats', {items: data})
+#end
